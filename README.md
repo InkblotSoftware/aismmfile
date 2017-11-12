@@ -53,7 +53,7 @@ Track data is stored as a time-ordered array of Vessel Position Reports:
 ```d
 struct VesselPosReport {
     double lat, lon;
-    int mmsi, timestamip;
+    int mmsi, timestamp;
     float lat, lon;
 }
 ```
@@ -83,7 +83,8 @@ Prints a CSV to stdout showing the MMSIs present in the file, and the number
 of VesselPosReports it contains for each MMSI. Ordered by MMSI ascending.
 Includes header row "mmsi,vessposrep_count".
 
-```USAGE:
+```
+USAGE:
     aismmfile_ls FILE
 ```
 
@@ -93,7 +94,8 @@ Combines one or more aismmfiles into a single aismmfile. Name the files you want
 to read as arguments. Writes the output data to stdout. Doesn't change the input
 files.
 
-```USAGE:
+```
+USAGE:
     aismmfile_cat FILE1 FILE2 FILE3 > OUTFILE
 ```
 
@@ -103,7 +105,8 @@ Converts a newline-delimited JSON file into an aismmfile file. Ignores any JSON
 objects that can't be converted into a VesselPosReport (i.e. don't have the right
 keys). The required keys are: <lat, lon, mmsi, timestamp, cog, sog>.
 
-```USAGE:
+```
+USAGE:
     aisndjson_to_aismmfile < NDJFILE > MMFILE
 ```
 
