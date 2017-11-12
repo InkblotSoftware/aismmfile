@@ -40,6 +40,9 @@ mmf.mmsis.each!writeln;
 // Print all the VesselPosReports for the first mmsi
 auto mm1 = mmf.mmsis.front;
 mmf.mmsi(mm1).each!writeln;
+
+// Check whether an mmsi exists in the first file
+writeln (mmf.front.exists_mmsi (123));
 ```
 
 
