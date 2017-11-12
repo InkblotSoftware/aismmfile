@@ -22,6 +22,8 @@ configuration "aismmfile_ls" {
     targetPath "bin"
     targetName "aismmfile_ls"
     mainSourceFile "app_src/aismmfile_ls.d"
+    buildOptions "optimize"
+    buildOptions "inline"
 }
 
 configuration "aismmfile_cat" {
@@ -29,4 +31,6 @@ configuration "aismmfile_cat" {
     targetPath "bin"
     targetName "aismmfile_cat"
     mainSourceFile "app_src/aismmfile_cat.d"
+    buildOptions "optimize"
+    buildOptions "inline"
 }
