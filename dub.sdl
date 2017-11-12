@@ -1,0 +1,32 @@
+name "aismmfile"
+description "Memory-mapped positional AIS data file libs/utils"
+authors "James Thompson (Inkblot Software)"
+copyright "Copyright (c) 2017 Inkblot Software Limited"
+license "MPLv2"
+
+configuration "sourceLibrary" {
+    targetPath "bin"
+}
+
+configuration "aisndjson_to_aismmfile" {
+    targetType "executable"
+    targetPath "bin"
+    targetName "aisndjson_to_aismmfile"
+    mainSourceFile "app_src/aisndjson_to_aismmfile.d"
+    buildOptions "optimize"
+    buildOptions "inline"
+}
+
+configuration "aismmfile_ls" {
+    targetType "executable"
+    targetPath "bin"
+    targetName "aismmfile_ls"
+    mainSourceFile "app_src/aismmfile_ls.d"
+}
+
+configuration "aismmfile_cat" {
+    targetType "executable"
+    targetPath "bin"
+    targetName "aismmfile_cat"
+    mainSourceFile "app_src/aismmfile_cat.d"
+}
