@@ -131,3 +131,15 @@ Caveats
 
 Don't move aismmfile's between machines with different endianness. If you don't
 know what that means, it does't affect you.
+
+
+Ownership and license
+---------------------
+
+Project is Copyright (c) 2017 Inkblot Software Limited.
+
+Licensed under the Mozilla Public License v2.0.
+
+This means you can link this library into your own projects BSD-style, but you can't
+remove code from files within this project and use it within your own files
+without opening up your project.
