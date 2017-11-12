@@ -34,12 +34,7 @@ asSpanI(T)(void[] sp) {
 //  View into an aismmfile data file - the core user-facing type
 
 class AISMmFile {
-//    @disable this(this);
-//    this(this) {
-        
-        
     this (string filepath) {
-//        stderr.writeln("+++++++ AISMmFile ctr +++++++");
         _mmFile = new MmFile (filepath);
         auto mmf = _mmFile[];
 
@@ -51,15 +46,9 @@ class AISMmFile {
         _allVPRs = mmf[MmsisCount.sizeof + _numMmsis*VPRsLoc.sizeof .. $]
                        .asSpanI!VPR;
     }
-
-    ~this() {
-//        stderr.writeln("====== AISMmFile dtr ======");
-//        destroy(_mmFile);
-    }
     
     // Range of all the mmsis in the file
     auto mmsis () {
-//        stderr.writeln("LOCS ", _locs);
         return _locs.map!(l => l.mmsi);
     }
     // Does the given mmsi exist in the file?
@@ -73,7 +62,6 @@ class AISMmFile {
         return _allVPRs [thisLoc.offset .. thisLoc.offset + thisLoc.length];
     }
     
-    //private Unique!MmFile _mmFile;
     private MmFile _mmFile;
     
     private ulong _numMmsis;
