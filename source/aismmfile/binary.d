@@ -41,5 +41,6 @@ extern (C) {
         Mmsi mmsi; Timestamp timestamp;
         float cog, sog;
     }
+    static assert (! (VesselPosReport.sizeof % 8));
     alias VPR = VesselPosReport;
 }
