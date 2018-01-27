@@ -21,7 +21,7 @@ alias Timestamp = int;
 
 extern (C) {
     // We store how many MMSIs are in the file as the first 8 bytes.
-    alias MmsisCount = ulong;
+    alias MmsisCount = long;
     static assert (MmsisCount.sizeof == 8);
 
     // Then we have a list of 'locs', which say where the VPRs for each MMSI

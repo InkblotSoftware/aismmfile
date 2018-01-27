@@ -47,7 +47,7 @@ class AISMmFile {
         _mmFile = new MmFile (filepath);
         auto mmf = _mmFile[];
 
-        _numMmsis = mmf[0 .. MmsisCount.sizeof].asSpanI!ulong[0];
+        _numMmsis = mmf[0 .. MmsisCount.sizeof].asSpanI!MmsisCount[0];
 
         _locs = mmf[MmsisCount.sizeof .. MmsisCount.sizeof + _numMmsis*VPRsLoc.sizeof]
                     .asSpanI!VPRsLoc;
