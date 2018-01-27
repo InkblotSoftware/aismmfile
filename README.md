@@ -54,7 +54,7 @@ Track data is stored as a time-ordered array of Vessel Position Reports:
 struct VesselPosReport {
     double lat, lon;
     int mmsi, timestamp;
-    float lat, lon;
+    float cog, sog;
 }
 ```
 
