@@ -125,9 +125,9 @@ This specific struct is:
 
 ```d
 struct VPRsLoc {
-    Mmsi mmsi;    // The MMSI we're talking about
-    int  offset;  // How far into the file's VPRs does the mmsi's span begin?
-    int  length;  // How many VPRs does this MMSI have
+    int mmsi;    // The MMSI we're talking about
+    int offset;  // How far into the file's VPRs does the mmsi's span begin?
+    int length;  // How many VPRs does this MMSI have
     private int _padding;
 }
 ```
