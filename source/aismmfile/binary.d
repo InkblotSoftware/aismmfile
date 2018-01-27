@@ -34,6 +34,7 @@ extern (C) {
         private int _padding;
     }
     static assert (! (VPRsLoc.sizeof % 8));
+    static assert (VPRsLoc.sizeof == 16);
 
     // The positional data we're storing
     struct VesselPosReport {
@@ -42,5 +43,6 @@ extern (C) {
         float cog, sog;
     }
     static assert (! (VesselPosReport.sizeof % 8));
+    static assert (VesselPosReport.sizeof == 32);
     alias VPR = VesselPosReport;
 }
