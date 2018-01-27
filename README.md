@@ -117,13 +117,26 @@ File format
 We use a very simple binary format for the files, with a header and a body.
 
 The header starts with an 8 byte count of the number of MMSIs stored in the file.
-Following this is an array of 8-aligned structs, one for each MMSI, stating where
-in the body the VesselPosReport objects for each MMSI are located. These structs
-are ordered by MMSI ascending.
+Following this is an array of 16-byte structs (8 byte aligned), one for each MMSI,
+stating where in the body the VesselPosReport objects for each MMSI are located.
+These structs are ordered by MMSI ascending.
 
-The body contains one array of VesselPosReport structs for each MMSI. VPRs
-inside each array are ordered by timestamp ascending. The arrays themselves
-are ordered by MMSI ascending.
+This specific struct is:
+
+```d
+struct VPRsLoc {
+    Mmsi mmsi;    // The MMSI we're talking about
+    int  offset;  // How far into the file's VPRs does the mmsi's span begin?
+    int  length;  // How many VPRs does this MMSI have
+    private int _padding;
+}
+```
+
+The body contains one array of VesselPosReport structs for each MMSI, each of which
+structs is 32 bytes long and 8 byte aligned. VPRs inside each array are ordered by
+timestamp ascending. The arrays themselves are ordered by MMSI ascending.
+
+See 'Stored data' above for the VPR struct definition.
 
 
 Caveats
